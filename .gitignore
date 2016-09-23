@@ -1,15 +1,42 @@
-.gradle
-/local.properties
-/.idea/workspace.xml
-WeGit.iml
-/.idea/libraries
-.DS_Store
-/build
-/captures
-.idea/encodings.xml
-/.gitignore
-/.idea/encodings.xml
+# built application files
+*.apk
+*.ap_
 
-httpknife.iml
-app.iml
-iconlibrary.iml
+# files for the dex VM
+*.dex
+
+# Java class files
+*.class
+
+# generated files
+bin/
+gen/
+build/
+
+# Local configuration file (sdk path, etc)
+local.properties
+
+gradle.properties
+
+# Windows thumbnail db
+.DS_Store
+
+# Eclipse project files
+.classpath
+.project
+
+# Android Studio
+.idea
+#.idea/workspace.xml - uncomment this and comment/delete .idea if it better suit your needs
+.gradle*
+gradlew*
+gradle/wrapper/gradle-wrapper.jar
+/*/local.properties
+/*/out
+/*/*/build
+/*/*/production
+*.iml
+*.iws
+*.ipr
+*~
+*.swp
