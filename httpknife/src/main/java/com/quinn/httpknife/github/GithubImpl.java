@@ -42,7 +42,7 @@ public class GithubImpl implements Github {
     public final static String MY_FOLLOWERS = API_HOST + "user/followers";
     public final static String MY_FOLLOWERSINGS = API_HOST + "user/following";
 
-    public final static int DEFAULT_PAGE_SIZE = 10;
+    public final static int DEFAULT_PAGE_SIZE = 30;
     public final static String PAGE = "page";
     public final static String PER_PAGE = "per_page";
 
@@ -90,8 +90,10 @@ public class GithubImpl implements Github {
         }
         Response response = http.post(CREATE_TOKEN)
                 .headers(configreHttpHeader())
-                .basicAuthorization(username, password).json(json).response();
-        if (response.isSuccess() == false)
+                .basicAuthorization(username, password)
+                .json(json)
+                .response();
+        if (!response.isSuccess())
             throw githubError;
         if (response.statusCode() == _401) {
             throw new AuthError("username or password is incorrect");

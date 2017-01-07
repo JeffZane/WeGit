@@ -60,10 +60,10 @@ public interface GithubService{
     @GET("/users/{user}/starred?per_page=10")
     Call<List<Repository>> starredRepo(@Path("user") String user,@Query("page") String page);
 
-    @GET("/users/{user}/events/public?per_page=10")
+    @GET("/users/{user}/events/public?per_page=30")
     Call<List<Event>> publicEvent(@Path("user") String user,@Query("page") String page);
 
-    @GET("/users/{user}/received_events?per_page=10")
+    @GET("/users/{user}/received_events?per_page=30")
     Call<List<Event>> receivedEvent(@Path("user") String user,@Query("page") String page);
 
     @GET("/user/starred/{owner}/{repo}")
